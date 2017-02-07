@@ -6,11 +6,10 @@ watch::watch(QWidget *parent) :
     ui(new Ui::watch)
 {
     ui->setupUi(this);
-    this->setGeometry(QApplication::desktop()->width()-120,QApplication::desktop()->height()-120,this->sizeHint().width(),this->sizeHint().height());
-   // move();
     setLayout(ui->horizontalLayout);
+    this->setGeometry(QApplication::desktop()->width()-120,QApplication::desktop()->height()-120,this->sizeHint().width(),this->sizeHint().height());
     setWindowFlags(Qt::FramelessWindowHint //去边框
-           |Qt::WindowStaysOnTopHint //最ding层显示           |Qt::Tool //不在任务栏显示
+           |Qt::WindowStaysOnTopHint|Qt::Tool //不在任务栏显示 //最ding层显示
          );
     this->setAttribute(Qt::WA_TranslucentBackground, true);
     tuichu  = new QAction("退出", this);
